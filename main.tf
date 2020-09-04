@@ -10,6 +10,9 @@ terraform {
     }
   }
 }
+provider "vultr" {
+  api_key = ""
+}
 
 resource "vultr_object_storage" "unit" {
   object_storage_cluster_id = data.vultr_region.region.id
