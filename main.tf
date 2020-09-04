@@ -31,3 +31,8 @@ provider "aws" {
     s3 = "ewr1.vultrobjects.com"
   }
 }
+
+resource "aws_s3_bucket" "project_state" {
+  bucket = "${uuid()}-${var.storage_unit_label}"
+  acle   = "private"
+}
