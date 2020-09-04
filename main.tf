@@ -21,6 +21,7 @@ resource "vultr_object_storage" "unit" {
 }
 
 provider "aws" {
+  region = "ewr1"
   access_key = vultr_object_storage.unit.s3_access_key
   secret_key = vultr_object_storage.unit.s3_secret_key
   skip_credentials_validation = true
