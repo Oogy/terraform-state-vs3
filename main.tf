@@ -15,7 +15,8 @@ provider "vultr" {
 }
 
 resource "vultr_object_storage" "unit" {
-  object_storage_cluster_id = data.vultr_region.region.id
+  # Need to hardcode 2, this is actually referring to NJ DCID=1, some issue with the object keys
+  object_storage_cluster_id = 2
   label = var.storage_unit_label
 }
 
