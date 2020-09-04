@@ -37,8 +37,4 @@ provider "aws" {
 resource "aws_s3_bucket" "project_state" {
   bucket = "${uuid()}-${var.storage_unit_label}"
   acl   = "private"
-
-  lifecycle_rule {
-    enabled = false
-  }
 }
