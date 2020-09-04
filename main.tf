@@ -25,9 +25,6 @@ provider "aws" {
   access_key = vultr_object_storage.unit.s3_access_key
   secret_key = vultr_object_storage.unit.s3_secret_key
   skip_credentials_validation = true
-  skip_requesting_account_id = true
-  skip_get_ec2_platforms = true
-  skip_metadata_api_check = true
 
   endpoints {
     s3 = "ewr1.vultrobjects.com"
