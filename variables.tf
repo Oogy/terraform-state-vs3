@@ -3,9 +3,14 @@ variable "region" {
   default = "New Jersey"
 }
 
-variable "storage_unit_label" {
+variable "bucket_name" {
   type = string
   default = "astra"
+}
+
+variable "bucket_acl" {
+  type = string
+  default = "private"
 }
 
 variable "aws_access_key" {

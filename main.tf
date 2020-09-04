@@ -25,3 +25,8 @@ provider "aws" {
     s3 = "ewr1.vultrobjects.com"
   }
 }
+
+resource "aws_s3_bucket" "vultr_bucket" {
+  bucket = var.bucket_name
+  acl = var.bucket_acl
+}
