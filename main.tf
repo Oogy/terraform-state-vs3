@@ -22,17 +22,12 @@ resource "vultr_object_storage" "unit" {
 
 provider "aws" {
   region = "us-east-1"
-  access_key = vultr_object_storage.unit.s3_access_key
-  secret_key = vultr_object_storage.unit.s3_secret_key
+  access_key = data.vultr_object_storage.unit.s3_access_key
+  secret_key = data.vultr_object_storage.unit.s3_secret_key
   skip_credentials_validation = true
   skip_requesting_account_id = true
 
   endpoints {
     s3 = "ewr1.vultrobjects.com"
   }
-}
-
-resource "aws_s3_bucket" "project_state" {
-  bucket = "${uuid()}-${var.storage_unit_label}"
-  acl   = "private"
 }
