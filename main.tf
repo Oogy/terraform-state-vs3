@@ -16,8 +16,8 @@ provider "vultr" {
 
 provider "aws" {
   region = "us-east-1"
-  access_key = data.vultr_object_storage.unit.s3_access_key
-  secret_key = data.vultr_object_storage.unit.s3_secret_key
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
   skip_credentials_validation = true
   skip_requesting_account_id = true
 

@@ -4,3 +4,4 @@ data "vultr_region" "region" {
     values = [var.region]
   }
 }
+
