@@ -21,11 +21,10 @@ resource "vultr_object_storage" "unit" {
 }
 
 provider "aws" {
-  region = "ewr1"
+  region = "us-east-1"
   access_key = vultr_object_storage.unit.s3_access_key
   secret_key = vultr_object_storage.unit.s3_secret_key
   skip_credentials_validation = true
-  skip_region_validation = true
   skip_requesting_account_id = true
   skip_get_ec2_platforms = true
   skip_metadata_api_check = true
