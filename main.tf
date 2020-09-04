@@ -10,8 +10,9 @@ terraform {
     }
   }
 }
+
 provider "vultr" {
-  api_key = ""
+  api_key = var.vultr_api_key
 }
 
 resource "vultr_object_storage" "unit" {
@@ -23,4 +24,7 @@ provider "aws" {
   region = "us-east-1"
   access_key = vultr_object_storage.unit.s3_access_key
   secret_key = vultr_object_storage.unit.s3_secret_key
+  endpoints {
+    s3 =
+  }
 }

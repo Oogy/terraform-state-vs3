@@ -7,3 +7,5 @@ variable "storage_unit_label" {
   type = string
   default = "astra"
 }
+
+variable "vultr_api_key" {}
