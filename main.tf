@@ -14,12 +14,6 @@ terraform {
 provider "vultr" {
 }
 
-resource "vultr_object_storage" "unit" {
-  # Need to hardcode 2, this is actually referring to NJ DCID=1, some issue with the object keys
-  object_storage_cluster_id = 2
-  label = var.storage_unit_label
-}
-
 provider "aws" {
   region = "us-east-1"
   access_key = data.vultr_object_storage.unit.s3_access_key
