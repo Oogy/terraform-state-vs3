@@ -6,7 +6,7 @@ terraform {
     }
     aws = {
       source = "hashicorp/aws"
-      version = "3.5.0"
+      version = "2.7.0"
     }
   }
 }
@@ -26,8 +26,6 @@ provider "aws" {
   secret_key = vultr_object_storage.unit.s3_secret_key
   skip_credentials_validation = true
   skip_requesting_account_id = true
-  skip_get_ec2_platforms = true
-  skip_metadata_api_check = true
 
   endpoints {
     s3 = "ewr1.vultrobjects.com"
