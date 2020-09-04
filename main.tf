@@ -24,6 +24,9 @@ provider "aws" {
   region = "us-east-1"
   access_key = vultr_object_storage.unit.s3_access_key
   secret_key = vultr_object_storage.unit.s3_secret_key
+  skip_credentials_validation = true
+  skip_region_validation = true
+  skip_requesting_account_id = true
   endpoints {
     s3 = "ewr1.vultrobjects.com"
   }
