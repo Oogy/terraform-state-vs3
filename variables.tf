@@ -8,4 +8,3 @@ variable "storage_unit_label" {
   default = "astra"
 }
 
-variable "vultr_api_key" {}

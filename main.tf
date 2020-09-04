@@ -12,7 +12,6 @@ terraform {
 }
 
 provider "vultr" {
-  api_key = var.vultr_api_key
 }
 
 resource "vultr_object_storage" "unit" {
