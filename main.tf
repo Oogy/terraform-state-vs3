@@ -27,6 +27,7 @@ provider "aws" {
   skip_credentials_validation = true
   skip_region_validation = true
   skip_requesting_account_id = true
+  skip_get_ec2_platforms = true
   endpoints {
     s3 = "ewr1.vultrobjects.com"
   }
@@ -35,4 +36,8 @@ provider "aws" {
 resource "aws_s3_bucket" "project_state" {
   bucket = "${uuid()}-${var.storage_unit_label}"
   acl   = "private"
+
+  lifecycle_rule {
+    enabled = false
+  }
 }
